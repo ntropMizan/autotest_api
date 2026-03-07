@@ -1,27 +1,14 @@
-# Виртуальное окружение
-.venv/
-venv/
-env/
-
-# Python
-__pycache__/
 *.pyc
-*.pyo
-*.pyd
+__pycache__/
 .pytest_cache/
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# Логи и временные файлы
-*.log
-*.tmp
-.DS_Store
-
-# Директории с отчётами (Allure, pytest и т.п.)
-allure-results/
-allure-report/
-htmlcov/
+.idea
+api_httpx/.env
+.venv
+config.browserstack.env
+allure-results
+venv
+.allure-results.zip
+**/.DS_Store
+logs/info.log
+video
+traces
