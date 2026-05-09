@@ -33,7 +33,7 @@ class FileShema(BaseModel):
     directory: str
 
 
-class UserShema(BaseModel):
+class UserSchema(BaseModel):
     id: str
     email: EmailStr
     last_name: str = Field(alias="lastName")
@@ -57,7 +57,7 @@ class CourseShema(BaseModel):
     description: str = "playwright course"
     preview_file: FileShema = Field(alias="previewFile")
     estimated_time: str = Field(alias="estimatedTime", default="2 weeks")
-    created_by_user: UserShema = Field(alias="createdByUser")
+    created_by_user: UserSchema = Field(alias="createdByUser")
 
 course_default_model = CourseShema(
     id="course-id",
@@ -72,7 +72,7 @@ course_default_model = CourseShema(
         directory="courses"
     ),
     estimatedTime="1 week",
-    createdByUser=UserShema(
+    createdByUser=UserSchema(
     id="user-id",
     email="user@gmail.com",
     lastName="Bond",
@@ -142,7 +142,7 @@ print(course_json_model.model_dump_json(by_alias=True))
 # print(course1.id)
 # print(course2.id)
 
-user = UserShema(
+user = UserSchema(
     id="user-id",
     email="user@gmail.com",
     lastName="Bond",
