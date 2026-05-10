@@ -7,8 +7,8 @@ def validate_json_schema(instance, schema) -> None:
     """
     Проверяет соответствует ли JSON-объект (instance) заданной JSON-схеме (schema).
 
-    :param instance: JSON-данные, которые нужно проверить.
     :param schema: Ожидаемая JSON-схема.
+    :param instance: JSON-данные, которые нужно проверить.
     :raises jsonschema.exceptions.ValidationError: если instance не соответствует schema.
     """
     validate(
