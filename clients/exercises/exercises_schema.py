@@ -5,6 +5,8 @@ class ExerciseSchema(BaseModel):
     """
     Описание структуры упражнения
     """
+    model_config = ConfigDict(populate_by_name=True)
+
     id: str
     title: str
     course_id: str = Field(alias="courseId")
@@ -42,6 +44,8 @@ class GetExercisesQuerySchema(BaseModel):
     """
     Описание структуры запроса на получение списка упражнений из курса.
     """
+    model_config = ConfigDict(populate_by_name=True)
+
     course_id: str = Field(alias="courseId")
 
 class CreateExerciseRequestSchema(BaseModel):
@@ -62,6 +66,8 @@ class UpdateExerciseRequestSchema(BaseModel):
     """
     Описание структуры запроса на обновление упражнения в курсе.
     """
+    model_config = ConfigDict(populate_by_name=True)
+
     title: str | None
     max_score: int | None = Field(alias="maxScore")
     min_score: int | None = Field(alias="minScore")

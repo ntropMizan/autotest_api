@@ -7,6 +7,8 @@ class CourseSchema(BaseModel):
     """
     Описание структуры курса
     """
+    model_config = ConfigDict(populate_by_name=True)
+
     id: str
     title: str
     max_score: int = Field(alias="maxScore")
@@ -20,6 +22,8 @@ class GetCoursesQuerySchema(BaseModel):
     """
     Описание структуры запроса на получение списка курсов.
     """
+    model_config = ConfigDict(populate_by_name=True)
+
     user_id: str = Field(alias="userId")
 
 
@@ -47,6 +51,8 @@ class UpdateCourseRequestSchema(BaseModel):
     """
     Описание структуры запроса на обновление курса.
     """
+    model_config = ConfigDict(populate_by_name=True)
+
     title: str | None
     max_score: int | None = Field(alias="maxScore")
     min_score: int | None = Field(alias="minScore")
