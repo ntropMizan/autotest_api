@@ -2,9 +2,9 @@ from clients.users.public_users_client import get_public_users_client
 from clients.users.user_schema import CreateUserRequestSchema, CreateUserResponseSchema
 from http import HTTPStatus
 
-from tools.assertion.base import assert_status_code
-from tools.assertion.schema import validate_json_schema
-from tools.assertion.users import assert_create_user_response
+from tools.assertions.base import assert_status_code
+from tools.assertions.schema import validate_json_schema
+from tools.assertions.users import assert_create_user_response
 
 
 def test_create_user():
