@@ -6,7 +6,7 @@ from clients.files.files_schema import CreateFileRequestSchema, CreateFileRespon
 from clients.private_http_builder import get_private_http_client, AuthenticationUserSchema
 
 
-class FileClient(APIClient):
+class FilesClient(APIClient):
     """
        Клиент для работы с /api/v1/files
     """
@@ -47,10 +47,10 @@ class FileClient(APIClient):
         response = self.create_file_api(request)
         return CreateFileResponseSchema.model_validate_json(response.text)
 
-def get_files_client(user: AuthenticationUserSchema) -> FileClient:
+def get_files_client(user: AuthenticationUserSchema) -> FilesClient:
     """
     Функция создает экземпляр FileClient с уже настроенным HTTP-клиентом.
 
     :return: Готовый к использованию FileClient
     """
-    return FileClient(client=get_private_http_client(user))
+    return FilesClient(client=get_private_http_client(user))
